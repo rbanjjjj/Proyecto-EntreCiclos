@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entre Ciclos</title>
+    <link rel="icon" type="image.png" href="../assets/logomain.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar section-content">
+            <a href="#" class="nav-logo">
+                <img src="../assets/logomain.png" alt="Logo Entre Ciclos" class="logo-img">
+                <div class="logo-text-group">
+                    <h2 class="logo-text">Entre Ciclos</h2>
+                    <span class="logo-subtext">Dale un nuevo ciclo a tus objetos</span>
+                </div>
+            </a>
+            <ul class="nav-menu">
+                <button id="menu-close-button" class="fas fa-times"></button>
+
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../match/match.html" class="nav-link">Encuentra tu match</a>
+                </li>
+                <li class="nav-item">
+                    <a href="sos.html" class="nav-link">Emergencia</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../miespacio/myspace.html" class="nav-link">Mi espacio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../ayuda/help.html" class="nav-link">Ayuda</a>
+                </li>
+                <li class="nav-session">
+                    <a href="../cuenta/form.html" class="nav-form">Iniciar sesión</a>
+                </li>
+            </ul >
+            
+            <button id="menu-open-button" class="fas fa-bars"></button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section sos-section">
+            <div class="section-content sos-wrapper">
+                <div class="sos-topbar">
+                    <div>
+                        <h1 class="sos-title">Sistema de Emergencia</h1>
+                        <p class="sos-subtitle" id="sos-user-status">Préstamos inmediatos dentro del campus antes de tu evaluación.</p>
+                    </div>
+
+                    <button type="button" id="subscribe-sos-btn" class="subscribe-btn">
+                        <i class="fas fa-bell"></i> <span>Suscribirme a alertas</span>
+                    </button>
+                </div>
+
+                <div class="sos-grid">
+                    <div class="sos-form-card">
+                        <div class="sos-card-badge">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <h2 class="sos-card-title">Publica una solicitud urgente</h2>
+                        <p class="sos-card-desc">Indica qué necesitas, dónde estás y cuánto tiempo lo usarás.</p>
+
+                        <form id="sos-form" class="sos-form" novalidate>
+                            <div class="form-group">
+                                <label for="sos-item">¿Qué artículo necesitas? *</label>
+                                <select id="sos-item" required>
+                                    <option value="Bata de laboratorio">Bata de laboratorio</option>
+                                    <option value="Calculadora científica">Calculadora científica</option>
+                                    <option value="Lentes de seguridad">Lentes de seguridad</option>
+                                    <option value="Escalímetro / Reglas">Escalímetro / Reglas</option>
+                                    <option value="Cargador / Adaptador">Cargador / Adaptador</option>
+                                    <option value="Otro">Otro (especificar abajo)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group" id="sos-custom-item-group" style="display: none;">
+                                <label for="sos-custom-item">Nombre del artículo *</label>
+                                <input type="text" id="sos-custom-item" placeholder="Ej. Compás de precisión">
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="sos-pavilion">Pabellón *</label>
+                                    <select id="sos-pavilion" required>
+                                        <option value="Pabellón A">Pabellón A</option>
+                                        <option value="Pabellón B">Pabellón B</option>
+                                        <option value="Pabellón C">Pabellón C</option>
+                                        <option value="Pabellón D">Pabellón D</option>
+                                        <option value="Pabellón E">Pabellón E</option>
+                                        <option value="Pabellón F">Pabellón F</option>
+                                        <option value="Pabellón G">Pabellón G</option>
+                                        <option value="Pabellón H">Pabellón H</option>
+                                        <option value="Pabellón I">Pabellón I</option>
+                                        <option value="Pabellón L (Laboratorios)">Pabellón L (Laboratorios)</option>
+                                        <option value="Pabellón O">Pabellón O</option>
+                                        <option value="Pabellón Q">Pabellón Q</option>
+                                        <option value="Pabellón R">Pabellón R</option>
+                                        <option value="Pabellón S">Pabellón S</option>
+                                        <option value="Pabellón T">Pabellón T</option>
+                                        <option value="Pabellón V">Pabellón V</option>
+                                        <option value="Pabellón W">Pabellón W</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="sos-meeting">Piso / punto de encuentro</label>
+                                    <input type="text" id="sos-meeting" placeholder="Ej. 2.º piso, fuera del aula">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="sos-starts-in">¿En cuánto empieza el examen? *</label>
+                                    <select id="sos-starts-in" required>
+                                        <option value="10">En 10 minutos</option>
+                                        <option value="20" selected>En 20 minutos</option>
+                                        <option value="30">En 30 minutos</option>
+                                        <option value="45">En 45 minutos</option>
+                                        <option value="60">En 1 hora</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="sos-duration">¿Cuánto durará el alquiler? *</label>
+                                    <select id="sos-duration" required>
+                                        <option value="1 hora">1 hora</option>
+                                        <option value="2 horas" selected>2 horas</option>
+                                        <option value="3 horas">3 horas</option>
+                                        <option value="4 horas">4 horas</option>
+                                        <option value="Todo el día">Todo el día</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="sos-tip">Propina ofrecida (S/) *</label>
+                                    <input type="number" id="sos-tip" min="0" step="0.5" placeholder="Ej. 10" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="sos-author">Tu nombre o alias *</label>
+                                    <input type="text" id="sos-author" placeholder="Ej. Emily R." required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="sos-contact">Contacto para coordinar *</label>
+                                <input type="text" id="sos-contact" placeholder="Correo institucional o número de celular" required>
+                            </div>
+
+                            <p id="sos-feedback" class="form-feedback"></p>
+
+                            <button type="submit" class="sos-submit-btn">
+                                <i class="fas fa-bell"></i> Enviar solicitud urgente
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="sos-active-panel">
+                        <div class="active-panel-header">
+                            <div>
+                                <h2 class="panel-heading"><i class="fas fa-clock"></i> Solicitudes actuales</h2>
+                                <p class="active-panel-desc">Haz clic en una solicitud para ver los detalles completos o aceptarla.</p>
+                            </div>
+                            <span id="active-requests-count" class="count-pill">0 activas</span>
+                        </div>
+
+                        <div id="sos-requests-list" class="sos-requests-list"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="match-popup" class="modal-overlay">
+        <div class="modal-box">
+            <div class="modal-header">
+                <div>
+                    <span class="modality-badge emergencia">Coincidencia encontrada</span>
+                    <h2>¡Artículos disponibles en Emergencia!</h2>
+                    <p>Estos estudiantes ya tienen publicado el producto que necesitas bajo modalidad Emergencia.</p>
+                </div>
+                <button type="button" id="close-match-popup" class="modal-close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div id="match-results-list" class="match-results-list"></div>
+
+            <div class="modal-actions">
+                <button type="button" id="publish-anyway-btn" class="secondary-btn">Igual publicar mi solicitud</button>
+                <button type="button" id="done-match-btn" class="primary-btn">Entendido</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="sos-detail-modal" class="modal-overlay">
+        <div class="modal-box">
+            <div class="modal-header">
+                <div>
+                    <span class="modality-badge emergencia">Solicitud Urgente</span>
+                    <h2 id="sos-detail-item">Artículo solicitado</h2>
+                </div>
+                <button type="button" id="close-sos-detail" class="modal-close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="detail-body">
+                <div class="sos-timer-banner">
+                    <i class="fas fa-hourglass-half"></i>
+                    <span>Tiempo restante antes del examen: <strong id="sos-detail-timer">00:00</strong></span>
+                </div>
+
+                <div class="detail-meta-grid">
+                    <div><span>Propina ofrecida:</span> <strong id="sos-detail-tip">S/ 0.00</strong></div>
+                    <div><span>Duración del alquiler:</span> <strong id="sos-detail-duration">-</strong></div>
+                    <div><span>Pabellón:</span> <strong id="sos-detail-pavilion">-</strong></div>
+                    <div><span>Punto de encuentro:</span> <strong id="sos-detail-meeting">-</strong></div>
+                    <div><span>Solicitante:</span> <strong id="sos-detail-author">-</strong></div>
+                    <div><span>Contacto para coordinar:</span> <strong id="sos-detail-contact">-</strong></div>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" id="close-sos-detail-btn" class="secondary-btn">Cerrar</button>
+                    <button type="button" id="accept-sos-btn" class="primary-btn">
+                        <i class="fas fa-handshake"></i> Aceptar solicitud (+20 pts)
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

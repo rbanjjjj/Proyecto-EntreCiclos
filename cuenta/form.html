@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entre Ciclos</title>
+    <link rel="icon" type="image.png" href="../assets/logomain.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar section-content">
+            <a href="#" class="nav-logo">
+                <img src="../assets/logomain.png" alt="Logo Entre Ciclos" class="logo-img">
+                <div class="logo-text-group">
+                    <h2 class="logo-text">Entre Ciclos</h2>
+                    <span class="logo-subtext">Dale un nuevo ciclo a tus objetos</span>
+                </div>
+            </a>
+            <ul class="nav-menu">
+                <button id="menu-close-button" class="fas fa-times"></button>
+
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../match/match.html" class="nav-link">Encuentra tu match</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../emergencia/sos.html" class="nav-link">Emergencia</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../miespacio/myspace.html" class="nav-link">Mi espacio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../ayuda/help.html" class="nav-link">Ayuda</a>
+                </li>
+                <li class="nav-session">
+                    <a href="form.html" class="nav-form">Iniciar sesión</a>
+                </li>
+            </ul >
+            
+            <button id="menu-open-button" class="fas fa-bars"></button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="section-content auth-wrapper">
+                <div class="auth-card">
+                    <div class="auth-tabs">
+                        <button type="button" class="auth-tab active" data-target="register-form">Crear cuenta</button>
+                        <button type="button" class="auth-tab" data-target="login-form">Iniciar sesión</button>
+                    </div>
+
+                    <form id="register-form" class="auth-form active" novalidate>
+                        <h1 class="auth-title">Únete a Entre Ciclos</h1>
+                        <p class="auth-subtitle">Exclusivo para estudiantes con correo institucional</p>
+
+                        <div class="input-group">
+                            <label for="reg-name">Nombre completo</label>
+                            <div class="input-field">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="reg-name" name="name" placeholder="Ej. Rodrigo Bernal" required>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="reg-email">Correo institucional</label>
+                            <div class="input-field">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="reg-email" name="email" placeholder="codigo@aloe.ulima.edu.pe" required>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="reg-password">Contraseña</label>
+                            <div class="input-field">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="reg-password" name="password" placeholder="Mínimo 8 caracteres" required>
+                                <button type="button" class="toggle-password" data-input="reg-password">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="reg-confirm">Confirmar contraseña</label>
+                            <div class="input-field">
+                                <i class="fas fa-shield-alt"></i>
+                                <input type="password" id="reg-confirm" name="confirm" placeholder="Repite tu contraseña" required>
+                                <button type="button" class="toggle-password" data-input="reg-confirm">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <p id="register-feedback" class="form-feedback"></p>
+
+                        <button type="submit" class="auth-submit">Crear cuenta</button>
+                    </form>
+
+                    <form id="login-form" class="auth-form" novalidate>
+                        <h1 class="auth-title">Bienvenido de vuelta</h1>
+                        <p class="auth-subtitle">Ingresa con tu cuenta institucional</p>
+
+                        <div class="input-group">
+                            <label for="login-email">Correo institucional</label>
+                            <div class="input-field">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="login-email" name="email" placeholder="codigo@aloe.ulima.edu.pe" required>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="login-password">Contraseña</label>
+                            <div class="input-field">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="login-password" name="password" placeholder="Tu contraseña" required>
+                                <button type="button" class="toggle-password" data-input="login-password">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <p id="login-feedback" class="form-feedback"></p>
+
+                        <button type="submit" class="auth-submit">Ingresar</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

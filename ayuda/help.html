@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entre Ciclos</title>
+    <link rel="icon" type="image.png" href="../assets/logomain.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar section-content">
+            <a href="#" class="nav-logo">
+                <img src="../assets/logomain.png" alt="Logo Entre Ciclos" class="logo-img">
+                <div class="logo-text-group">
+                    <h2 class="logo-text">Entre Ciclos</h2>
+                    <span class="logo-subtext">Dale un nuevo ciclo a tus objetos</span>
+                </div>
+            </a>
+            <ul class="nav-menu">
+                <button id="menu-close-button" class="fas fa-times"></button>
+
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../match/match.html" class="nav-link">Encuentra tu match</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../emergencia/sos.html" class="nav-link">Emergencia</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../miespacio/myspace.html" class="nav-link">Mi espacio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="help.html" class="nav-link">Ayuda</a>
+                </li>
+                <li class="nav-session">
+                    <a href="../cuenta/form.html" class="nav-form">Iniciar sesión</a>
+                </li>
+            </ul >
+            
+            <button id="menu-open-button" class="fas fa-bars"></button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section help-section">
+            <div class="section-content help-wrapper">
+                <div class="help-header">
+                    <h1 class="help-title">Centro de Ayuda</h1>
+                    <p class="help-subtitle">Resuelve tus dudas sobre nuestro servicio o ponte en contacto con nosotros.</p>
+                </div>
+
+                <div class="help-grid">
+                    <div class="faq-container">
+                        <h2 class="section-heading">Preguntas Frecuentes (FAQ)</h2>
+                        <div class="faq-list">
+                            <div class="faq-item">
+                                <button type="button" class="faq-question" aria-expanded="false">
+                                    <span>1. ¿Cómo puedo vender o alquilar mis útiles?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>En "Mi espacio" puedes gestionar tus productos! Crea una publicación
+                                        con los datos que te piden, coordina con cuidado con la parte interesada, 
+                                        asegurate de confirmar la entrega o el recibo y calificar la experienca
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <button type="button" class="faq-question" aria-expanded="false">
+                                    <span>2. ¿Cómo funciona el sistema de emergencias?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Si estás en apuros y necesitas un item urgente, puedes pedirlo en la pestaña
+                                         de emergencia. Ofrece una propina y obtén tu item dentro del tiempo que
+                                         necesitas. Los "prestadores" serán notificados y recibirás una respuesta de
+                                         acuerdo a la disponibilidad. Es una oportunidad para ambas partes.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <button type="button" class="faq-question" aria-expanded="false">
+                                    <span>3. ¿Qué garantías ofrecen?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>
+                                        Para todos los pagos servimos de intermediarios, así aseguramos que todas las
+                                        transacciones se desarrollan de manera justa para prevenir estafas. En el caso de
+                                        intercambios no monetarios existe un amplio catálogo de objetos para dejar en
+                                        cuestión de garantía.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <button type="button" class="faq-question" aria-expanded="false">
+                                    <span>4. ¿Cuáles son los métodos de pago admitidos?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Actualmente manejamos pagos con billeteras digitales (Yape, Plin, etc.). Estamos trabajando
+                                        en ampliar las opciones.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <h2 class="section-heading">Contáctanos</h2>
+                        <p class="contact-subtitle">¿Tuviste algún problema? Escríbenos y trataremos de ayudarte.</p>
+
+                        <form id="contact-form" class="contact-form" novalidate>
+                            <div class="input-group">
+                                <label for="contact-name">Nombre completo</label>
+                                <div class="input-field">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" id="contact-name" name="name" placeholder="Tu nombre" required>
+                                </div>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="contact-email">Correo institucional</label>
+                                <div class="input-field">
+                                    <i class="fas fa-envelope"></i>
+                                    <input type="email" id="contact-email" name="email" placeholder="codigo@aloe.ulima.edu.pe" required>
+                                </div>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="contact-subject">Asunto</label>
+                                <div class="input-field">
+                                    <i class="fas fa-tag"></i>
+                                    <input type="text" id="contact-subject" name="subject" placeholder="Motivo de tu consulta" required>
+                                </div>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="contact-message">Mensaje</label>
+                                <div class="input-field textarea-field">
+                                    <textarea id="contact-message" name="message" rows="4" placeholder="Escribe tu consulta o comentario aquí..." required></textarea>
+                                </div>
+                            </div>
+
+                            <p id="contact-feedback" class="form-feedback"></p>
+
+                            <button type="submit" class="auth-submit">Enviar mensaje</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

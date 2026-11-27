@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entre Ciclos</title>
+    <link rel="icon" type="image.png" href="../assets/logomain.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar section-content">
+            <a href="#" class="nav-logo">
+                <img src="../assets/logomain.png" alt="Logo Entre Ciclos" class="logo-img">
+                <div class="logo-text-group">
+                    <h2 class="logo-text">Entre Ciclos</h2>
+                    <span class="logo-subtext">Dale un nuevo ciclo a tus objetos</span>
+                </div>
+            </a>
+            <ul class="nav-menu">
+                <button id="menu-close-button" class="fas fa-times"></button>
+
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../match/match.html" class="nav-link">Encuentra tu match</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../emergencia/sos.html" class="nav-link">Emergencia</a>
+                </li>
+                <li class="nav-item">
+                    <a href="myspace.html" class="nav-link">Mi espacio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../ayuda/help.html" class="nav-link">Ayuda</a>
+                </li>
+                <li class="nav-session">
+                    <a href="../cuenta/form.html" class="nav-form">Iniciar sesión</a>
+                </li>
+            </ul >
+            
+            <button id="menu-open-button" class="fas fa-bars"></button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section myspace-section">
+            <div class="section-content myspace-wrapper">
+                <div class="myspace-header">
+                    <div>
+                        <h1 class="myspace-title">Mi espacio</h1>
+                        <p class="myspace-subtitle" id="user-greeting">Gestiona tus artículos, historial de intercambios y puntos acumulados.</p>
+                    </div>
+                    <div class="user-points-badge">
+                        <i class="fas fa-trophy"></i>
+                        <div>
+                            <span class="badge-label">Mis puntos</span>
+                            <strong id="user-total-points">0 pts</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-tabs">
+                    <button type="button" class="space-tab active" data-tab="tab-publications">
+                        <i class="fas fa-box-open"></i> Mis publicaciones
+                    </button>
+                    <button type="button" class="space-tab" data-tab="tab-transactions">
+                        <i class="fas fa-exchange-alt"></i> Mis transacciones
+                    </button>
+                    <button type="button" class="space-tab" data-tab="tab-ranking">
+                        <i class="fas fa-medal"></i> Ranking
+                    </button>
+                </div>
+
+                <div id="tab-publications" class="space-panel active">
+                    <div class="panel-topbar">
+                        <h2 class="panel-heading">Tus artículos publicados</h2>
+                        <button type="button" id="open-publish-modal" class="primary-btn">
+                            <i class="fas fa-plus"></i> Crear publicación
+                        </button>
+                    </div>
+
+                    <div id="publications-grid" class="publications-grid"></div>
+                </div>
+
+                <div id="tab-transactions" class="space-panel">
+                    <div class="panel-topbar">
+                        <h2 class="panel-heading">Historial de compras y ventas</h2>
+                        <span class="points-legend">Puntos por completar: Venta +5 | Empeño +10 | Emergencia +20</span>
+                    </div>
+
+                    <div id="transactions-list" class="transactions-list"></div>
+                </div>
+
+                <div id="tab-ranking" class="space-panel">
+                    <div class="ranking-grid">
+                        <div class="ranking-card">
+                            <div class="ranking-card-header">
+                                <h2 class="panel-heading"><i class="fas fa-crown"></i> Top 5 Estudiantes</h2>
+                                <span id="user-rank-pill" class="rank-pill">Tu puesto: #--</span>
+                            </div>
+                            <div id="leaderboard-list" class="leaderboard-list"></div>
+                        </div>
+
+                        <div class="rewards-card">
+                            <h2 class="panel-heading"><i class="fas fa-gift"></i> Premios Mensuales</h2>
+                            <p class="rewards-intro">Acumula puntos completando transacciones verificadas durante el ciclo.</p>
+
+                            <div class="rewards-list">
+                                <div class="reward-item gold">
+                                    <span class="reward-place">1er Puesto</span>
+                                    <h4>Vale de consumo S/ 50 + Kit Ulima</h4>
+                                    <p>Canjeable en cafeterías del campus y librería universitaria.</p>
+                                </div>
+                                <div class="reward-item silver">
+                                    <span class="reward-place">2do Puesto</span>
+                                    <h4>Vale de consumo S/ 30</h4>
+                                    <p>Válido en módulos de comida y fotocopias dentro del campus.</p>
+                                </div>
+                                <div class="reward-item bronze">
+                                    <span class="reward-place">3er Puesto</span>
+                                    <h4>Pack de útiles + Destacado gratis</h4>
+                                    <p>Posiciona tus próximas 3 publicaciones en los primeros resultados.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="publish-modal" class="modal-overlay">
+        <div class="modal-box">
+            <div class="modal-header">
+                <div>
+                    <h2>Publica un artículo</h2>
+                    <p>Ayuda a que otro estudiante encuentre lo que necesita.</p>
+                </div>
+                <button type="button" id="close-publish-modal" class="modal-close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <form id="publish-form" class="modal-form" novalidate>
+                <div class="form-group">
+                    <label for="pub-title">Nombre del artículo *</label>
+                    <input type="text" id="pub-title" placeholder="Ej. Calculadora científica Casio" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="pub-modality">¿Qué modalidad ofreces? *</label>
+                        <select id="pub-modality" required>
+                            <option value="Venta">Venta</option>
+                            <option value="Empeño">Empeño</option>
+                            <option value="Emergencia">Emergencia</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pub-career">Carrera *</label>
+                        <select id="pub-career" required>
+                            <option value="Administración">Administración</option>
+                            <option value="Ingeniería Industrial">Ingeniería Industrial</option>
+                            <option value="Ingeniería de Sistemas">Ingeniería de Sistemas</option>
+                            <option value="Arquitectura">Arquitectura</option>
+                            <option value="Comunicación">Comunicación</option>
+                            <option value="Derecho">Derecho</option>
+                            <option value="Economía">Economía</option>
+                            <option value="Psicología">Psicología</option>
+                            <option value="Todas las carreras">Todas las carreras</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="pub-price">Precio / Tarifa (S/)</label>
+                        <input type="number" id="pub-price" min="0" step="0.5" placeholder="Ej. 25">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pub-date-from">Disponible desde *</label>
+                        <input type="date" id="pub-date-from" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="pub-date-to">Disponible hasta *</label>
+                        <input type="date" id="pub-date-to" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pub-image">Foto del producto (opcional)</label>
+                        <input type="file" id="pub-image" accept="image/png, image/jpeg">
+                        <small class="field-hint">JPG o PNG de hasta 3 MB.</small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="pub-description">Descripción, estado y condiciones</label>
+                    <textarea id="pub-description" rows="3" placeholder="Estado, accesorios incluidos, condiciones de entrega o garantía..."></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="pub-author">Tu nombre o alias *</label>
+                        <input type="text" id="pub-author" placeholder="Ej. Ana M." required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pub-contact">Contacto para coordinar *</label>
+                        <input type="text" id="pub-contact" placeholder="Correo universitario o teléfono" required>
+                    </div>
+                </div>
+
+                <p id="publish-feedback" class="form-feedback"></p>
+
+                <div class="modal-actions">
+                    <button type="button" id="cancel-publish-btn" class="secondary-btn">Cancelar</button>
+                    <button type="submit" class="primary-btn">Publicar artículo</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="detail-modal" class="modal-overlay">
+        <div class="modal-box detail-modal-box">
+            <div class="modal-header">
+                <div>
+                    <span id="detail-modality-badge" class="modality-badge">Venta</span>
+                    <h2 id="detail-title">Título del artículo</h2>
+                </div>
+                <button type="button" id="close-detail-modal" class="modal-close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="detail-body">
+                <img id="detail-img" src="" alt="Vista completa" class="detail-full-img">
+                <div class="detail-meta-grid">
+                    <div><span>Precio:</span> <strong id="detail-price">S/ 0</strong></div>
+                    <div><span>Carrera:</span> <strong id="detail-career">-</strong></div>
+                    <div><span>Disponible desde:</span> <strong id="detail-from">-</strong></div>
+                    <div><span>Disponible hasta:</span> <strong id="detail-to">-</strong></div>
+                    <div><span>Publicado por:</span> <strong id="detail-author">-</strong></div>
+                    <div><span>Contacto:</span> <strong id="detail-contact">-</strong></div>
+                </div>
+                <div class="detail-desc-box">
+                    <span>Descripción y condiciones:</span>
+                    <p id="detail-description">-</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

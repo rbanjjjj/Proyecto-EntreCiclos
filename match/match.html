@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entre Ciclos</title>
+    <link rel="icon" type="image.png" href="../assets/logomain.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar section-content">
+            <a href="#" class="nav-logo">
+                <img src="../assets/logomain.png" alt="Logo Entre Ciclos" class="logo-img">
+                <div class="logo-text-group">
+                    <h2 class="logo-text">Entre Ciclos</h2>
+                    <span class="logo-subtext">Dale un nuevo ciclo a tus objetos</span>
+                </div>
+            </a>
+            <ul class="nav-menu">
+                <button id="menu-close-button" class="fas fa-times"></button>
+
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="match.html" class="nav-link">Encuentra tu match</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../emergencia/sos.html" class="nav-link">Emergencia</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../miespacio/myspace.html" class="nav-link">Mi espacio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../ayuda/help.html" class="nav-link">Ayuda</a>
+                </li>
+                <li class="nav-session">
+                    <a href="../cuenta/form.html" class="nav-form">Iniciar sesión</a>
+                </li>
+            </ul >
+            
+            <button id="menu-open-button" class="fas fa-bars"></button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section match-section">
+            <div class="section-content match-wrapper">
+                <div class="match-header">
+                    <h1 class="match-title">Encuentra tu match</h1>
+                    <p class="match-subtitle">Busca los útiles, libros o equipos que necesitas para tus cursos y filtra por las fechas exactas de uso.</p>
+                </div>
+
+                <div class="search-card">
+                    <form id="match-search-form" class="search-form" novalidate>
+                        <div class="form-group search-item-group">
+                            <label for="search-query">¿Qué objeto buscas? *</label>
+                            <div class="input-field">
+                                <i class="fas fa-search"></i>
+                                <input type="text" id="search-query" placeholder="Ej. Calculadora, bata, libro de cálculo..." required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="search-date-from">Lo necesito desde *</label>
+                            <div class="input-field">
+                                <input type="date" id="search-date-from" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="search-date-to">Hasta *</label>
+                            <div class="input-field">
+                                <input type="date" id="search-date-to" required>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="primary-btn search-submit-btn">
+                            <i class="fas fa-bolt"></i> Buscar coincidencias
+                        </button>
+                    </form>
+
+                    <p id="search-feedback" class="form-feedback"></p>
+                </div>
+
+                <div class="results-header">
+                    <h2 id="results-heading" class="panel-heading">Catálogo disponible</h2>
+                    <span id="results-count" class="count-pill">0 coincidencias</span>
+                </div>
+
+                <div id="match-results-grid" class="match-results-grid"></div>
+            </div>
+        </section>
+    </main>
+
+    <div id="match-detail-modal" class="modal-overlay">
+        <div class="modal-box detail-modal-box">
+            <div class="modal-header">
+                <div>
+                    <div class="modal-badges">
+                        <span id="detail-modality-badge" class="modality-badge">Venta</span>
+                        <span class="status-badge">Estado: Disponible</span>
+                    </div>
+                    <h2 id="detail-title">Título del artículo</h2>
+                </div>
+                <button type="button" id="close-detail-modal" class="modal-close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="detail-body">
+                <img id="detail-img" src="" alt="Vista completa" class="detail-full-img">
+
+                <div class="detail-meta-grid">
+                    <div><span>Precio / Tarifa:</span> <strong id="detail-price">S/ 0</strong></div>
+                    <div><span>Carrera:</span> <strong id="detail-career">-</strong></div>
+                    <div><span>Disponible desde:</span> <strong id="detail-from">-</strong></div>
+                    <div><span>Disponible hasta:</span> <strong id="detail-to">-</strong></div>
+                    <div><span>Publicado por:</span> <strong id="detail-author">-</strong></div>
+                    <div><span>Contacto directo:</span> <strong id="detail-contact">-</strong></div>
+                </div>
+
+                <div class="detail-desc-box">
+                    <span>Comentario, estado y condiciones:</span>
+                    <p id="detail-description">-</p>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" id="close-detail-btn" class="secondary-btn">Cerrar</button>
+                    <button type="button" id="request-match-btn" class="primary-btn">
+                        <i class="fas fa-handshake"></i> Solicitar artículo
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
